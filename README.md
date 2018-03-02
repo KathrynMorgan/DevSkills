@@ -2,10 +2,10 @@
 Skills Development &amp; Continuing Edu - Python | Bash | Etc.
 
 ### _Research_ToDo_
-Libraries: getopt, optparse, argparse, docopt
-Conf File layout & type - YAML/JSON
-CMD line output coloration
-CMD line option parser library: CLIFF (used by openstack prlject)
+ 1. Libraries: getopt, optparse, argparse, docopt
+ 2. Conf File layout & type - YAML/JSON
+ 3. CMD line output coloration
+ 4. CMD line option parser library: CLIFF (used by openstack prlject)
 
 ### _Refrences_
  * https://pymotw.com/3/argparse/
