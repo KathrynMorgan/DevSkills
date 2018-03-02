@@ -12,7 +12,7 @@
   ],
    "openvswitch": [
     {"name": "openvswitch-switch",      "version": "2.5.2"},
-  ]
+  ],
    "openvswitch-dpdk": [
     {"name": "dkms",                    "version": "2.2.0.3"},
     {"name": "dpdk",                    "version": "2.2.0"},
