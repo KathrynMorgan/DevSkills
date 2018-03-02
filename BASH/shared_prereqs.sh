@@ -1,37 +1,4 @@
-#!/bin/bash
-# Exit immediately if anything goes wrong, instead of making things worse.
-set -e
-####################################################################
-
-# NB(kamidzi): following calls load_configs(); potentially is destructive to settings
-if [[ ! -z "$BOOTSTRAP_HTTP_PROXY_URL" ]] || [[ ! -z "$BOOTSTRAP_HTTPS_PROXY_URL" ]] ; then
-  echo "Testing configured proxies..."
-  source "$REPO_ROOT/bootstrap/shared/shared_proxy_setup.sh"
-else
-  source "$REPO_ROOT/bootstrap/shared/shared_functions.sh"
-fi
-
-REQUIRED_VARS=( BOOTSTRAP_CACHE_DIR REPO_ROOT )
-check_for_envvars "${REQUIRED_VARS[@]}"
-
-# Create directory for download cache.
-mkdir -p "$BOOTSTRAP_CACHE_DIR"
-
-ubuntu_url="http://us.archive.ubuntu.com/ubuntu/dists/trusty-updates"
-
-chef_url="https://packages.chef.io/files/stable"
-chef_client_ver=12.9.41
-chef_server_ver=12.6.0
-CHEF_CLIENT_DEB=${CHEF_CLIENT_DEB:-chef_${chef_client_ver}-1_amd64.deb}
-CHEF_SERVER_DEB=${CHEF_SERVER_DEB:-chef-server-core_${chef_server_ver}-1_amd64.deb}
-
-cirros_url="http://download.cirros-cloud.net"
-cirros_version="0.3.4"
-
-cloud_img_url="https://cloud-images.ubuntu.com/vagrant/trusty/current"
-# cloud_img_url="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/vagrant/trusty/current"
-
-cloud_img_box="trusty-server-cloudimg-amd64-vagrant-disk1.box"
+loud_img_box="trusty-server-cloudimg-amd64-vagrant-disk1.box"
 netboot_iso="ubuntu-14.04-mini.iso"
 packages_json="$REPO_ROOT/bootstrap/config/packages.json"
 pypi_url="https://pypi.python.org/packages/source"
