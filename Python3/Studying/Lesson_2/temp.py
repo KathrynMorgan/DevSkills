@@ -8,7 +8,7 @@ greetings = '''Hello, from here you can do a few things including:
 # Define the "hello" function
 def print_hello():
     print('HELLO WERLD!')
-    print('My name is ', usr_NAME) # TODO: @stephanie why does this break
+    print('My name is ', usr_NAME)        # TODO: @stephanie why does this break
 
 #################################################################################
 def req_command():
@@ -16,7 +16,7 @@ def req_command():
     usr_NAME = "Empty"
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
-    print('Your name is:', usr_NAME) # TODO: @stephanie why does this work
+    print('Your name is:', usr_NAME)      # TODO: @stephanie why does this work
     while usr_CMD == "Empty":
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
         if usr_CMD == 'hello':
