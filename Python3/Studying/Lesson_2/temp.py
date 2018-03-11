@@ -19,7 +19,7 @@ def print_hello_world(usr_NAME):
     print('My name is ', usr_NAME)
 
 #################################################################################
-def req_command(usr_NAME, friend_NAME):
+def req_command(usr_NAME):
     usr_CMD = "Empty"
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
@@ -29,6 +29,7 @@ def req_command(usr_NAME, friend_NAME):
         if usr_CMD == 'hello world':
             print_hello_world(usr_NAME)
         elif usr_CMD == 'hello human':
+            friend_NAME = "Empty"
             while friend_NAME == "Empty":
                 friend_NAME = input('Hi Friend; what is your name? : ')
             print_hello_usr(usr_NAME, friend_NAME)
@@ -40,13 +41,12 @@ def req_command(usr_NAME, friend_NAME):
 # Set Default Variables
 def main():
     usr_NAME = "Empty"
-    friend_NAME = "Empty"
     greetings = '''Hello, from here you can do a few things including:
     Send a "hello world message"  [hello world]
     Send a "hello human message"  [hello human]
     '''
     print(greetings)
-    req_command(usr_NAME, friend_NAME)
+    req_command(usr_NAME)
 
 #################################################################################
 # Start Program
