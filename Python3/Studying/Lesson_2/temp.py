@@ -17,7 +17,7 @@ def print_hello(usr_NAME):
     print('My name is ', usr_NAME)        # TODO: @stephanie why does this break
 
 #################################################################################
-def req_command():
+def req_command(usr_NAME, usr_CMD):
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
     print('Your name is:', usr_NAME)      # TODO: @stephanie why does this work
@@ -31,4 +31,4 @@ def req_command():
 #################################################################################
 #say_HELLO = True
 print(greetings)
-req_command()
+req_command(usr_NAME, usr_CMD)
