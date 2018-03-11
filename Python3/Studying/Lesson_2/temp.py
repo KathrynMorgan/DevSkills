@@ -3,7 +3,6 @@
 import os
 
 # Set Default Variables
-usr_CMD = "Empty"
 usr_NAME = "Empty"
 greetings = '''Hello, from here you can do a few things including:
     Send a "hello world message" [hello]
@@ -17,7 +16,8 @@ def print_hello(usr_NAME):
     print('My name is ', usr_NAME)        # TODO: @stephanie why does this break
 
 #################################################################################
-def req_command(usr_NAME, usr_CMD):
+def req_command(usr_NAME):
+    usr_CMD = "Empty"
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
     print('Your name is:', usr_NAME)      # TODO: @stephanie why does this work
@@ -31,4 +31,4 @@ def req_command(usr_NAME, usr_CMD):
 #################################################################################
 #say_HELLO = True
 print(greetings)
-req_command(usr_NAME, usr_CMD)
+req_command(usr_NAME)
