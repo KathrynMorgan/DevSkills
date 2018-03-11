@@ -16,9 +16,9 @@ def req_command():
     usr_NAME = "Empty"
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
-    print(usr_NAME) # TODO: @stephanie why does this work
+    print('Your name is:', usr_NAME) # TODO: @stephanie why does this work
     while usr_CMD == "Empty":
-        usr_CMD = input('What would you like to do? : ')
+        usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
         if usr_CMD == 'hello':
             print_hello()
         else:
