@@ -12,7 +12,7 @@ greetings = '''Hello, from here you can do a few things including:
 # Define the "hello" function
 def print_hello(usr_NAME):
     os.system('clear')
-    print('HELLO WERLD!')
+    print('HELLO WERLD!', end=' ')
     print('My name is ', usr_NAME)        # TODO: @stephanie why does this break
 
 #################################################################################
