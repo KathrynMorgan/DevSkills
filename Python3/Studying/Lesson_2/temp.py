@@ -20,17 +20,17 @@ def print_hello_world(usr_NAME):
 
 #################################################################################
 def req_command(usr_NAME):
-    usr_CMD = "Empty"
-    while usr_NAME == "Empty":
+    usr_CMD = "None"
+    if usr_NAME == "None":                         # TODO: change to while loop + add sanity check
         usr_NAME = input('First, what is your name? : ')
     print('Your name is:', usr_NAME)
-    while usr_CMD == "Empty":
+    if usr_CMD == "None":                          # TODO: change to while loop + add sanity check
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
-        if usr_CMD == 'hello world':
+        if usr_CMD == 'hello world':               # TODO: change to while loop + add sanity check
             print_hello_world(usr_NAME)
         elif usr_CMD == 'hello human':
-            friend_NAME = "Empty"
-            while friend_NAME == "Empty":
+            friend_NAME = "None"
+            while friend_NAME == "None":
                 friend_NAME = input('Hi Friend; what is your name? : ')
             print_hello_usr(usr_NAME, friend_NAME)
         else:
@@ -40,7 +40,7 @@ def req_command(usr_NAME):
 # Leading function to define base variables etc.
 # Set Default Variables
 def main():
-    usr_NAME = "Empty"
+    usr_NAME = "None"
     greetings = '''Hello, from here you can do a few things including:
     Send a "hello world message"  [hello world]
     Send a "hello human message"  [hello human]
