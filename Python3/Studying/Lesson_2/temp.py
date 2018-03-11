@@ -2,33 +2,52 @@
 # Import libraries
 import os
 
-# Set Default Variables
-usr_NAME = "Empty"
-greetings = '''Hello, from here you can do a few things including:
-    Send a "hello world message" [hello]
-'''
+#################################################################################
+# Define the "hello" function
+def print_hello_usr(usr_NAME, friend_NAME):
+    os.system('clear')
+    print('Hello', end=' ')
+    print(friend_NAME, end='. ')
+    print('How are you?', end=' ')
+    print('My name is ', usr_NAME)
 
 #################################################################################
 # Define the "hello" function
-def print_hello(usr_NAME):
+def print_hello_world(usr_NAME):
     os.system('clear')
     print('HELLO WERLD!', end=' ')
-    print('My name is ', usr_NAME)        # TODO: @stephanie why does this break
+    print('My name is ', usr_NAME)
 
 #################################################################################
-def req_command(usr_NAME):
+def req_command(usr_NAME, friend_NAME):
     usr_CMD = "Empty"
     while usr_NAME == "Empty":
         usr_NAME = input('First, what is your name? : ')
-    print('Your name is:', usr_NAME)      # TODO: @stephanie why does this work
+    print('Your name is:', usr_NAME)
     while usr_CMD == "Empty":
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
-        if usr_CMD == 'hello':
-            print_hello(usr_NAME)
+        if usr_CMD == 'hello world':
+            print_hello_world(usr_NAME)
+        elif usr_CMD == 'hello human':
+            while friend_NAME == "Empty":
+                friend_NAME = input('Hi Friend; what is your name? : ')
+            print_hello_usr(usr_NAME, friend_NAME)
         else:
             print('Sorry, that command was not understood, please try again...')
 
 #################################################################################
-#say_HELLO = True
-print(greetings)
-req_command(usr_NAME)
+# Leading function to define base variables etc.
+# Set Default Variables
+def main():
+    usr_NAME = "Empty"
+    friend_NAME = "Empty"
+    greetings = '''Hello, from here you can do a few things including:
+    Send a "hello world message"  [hello world]
+    Send a "hello human message"  [hello human]
+    '''
+    print(greetings)
+    req_command(usr_NAME, friend_NAME)
+
+#################################################################################
+# Start Program
+main()
