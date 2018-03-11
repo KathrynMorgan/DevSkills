@@ -16,7 +16,7 @@ def print_hello_usr(usr_NAME):
 def print_hello_world(usr_NAME, friend_NAME):
     os.system('clear')
     print('HELLO WERLD!', end=' ')
-    print('My name is ', usr_NAME)
+    print('My name is ', usr_NAME)                         # BUG_1.1
 
 #################################################################################
 # Ask friend what their name is
@@ -32,7 +32,7 @@ def ask_usr_name():
     os.system('clear')
     usr_NAME = "None"
     if usr_NAME == "None":              # TODO: change to while loop + add sanity check
-        usr_NAME = input('First, what is your name? : ')
+        usr_NAME = input('First, what is your name? : ')   # BUG_1.1
 
 #################################################################################
 def req_command(usr_NAME):
@@ -56,6 +56,7 @@ def main():
         usr_NAME
     except NameError:
         usr_NAME = "None"
+    print(usr_NAME)
     greetings = '''Hello, from here you can do a few things including:
     Send a "hello world message"  [hello world]
     Send a "hello human message"  [hello human]
