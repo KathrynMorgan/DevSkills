@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
+# TODO
+# getopts commandline flag and value passing
+# demo classes for variables
+#   EG:
+#    - city
+#    - last name
+
 # Import libraries
 import os
 
 #################################################################################
 # Define the "hello" function
-# TODO: clean up print to screen lines
-def print_hello_usr(usr_NAME, friend_NAME):
+def print_hello_usr(usr_NAME, friend_NAME):                 # Notice variable names passed through function name brackets
     os.system('clear')
-    print('Hello', end=' ')
-    print(friend_NAME, end='. ')
-    print('How are you?', end=' ')
-    print('My name is ', usr_NAME)
+    print('Hello {} How are you? '.format(friend_NAME))
+    print('My name is {}'.format(usr_NAME))
 
 #################################################################################
 # Define the "hello" function
@@ -22,42 +26,41 @@ def print_hello_world(usr_NAME):
 #################################################################################
 # Ask friend what their name is
 def ask_friend_name(friend_NAME):
-    os.system('clear')
-    friend_NAME = None
-    if friend_NAME == None:                              # TODO: change to while loop + add sanity check
-        friend_NAME = input('Hi Friend; what is your name? : ')
-        print('inside ask_friend_name', friend_NAME)
+    os.system('clear')                                      # Clear Terminal
+    if friend_NAME == None:                                 # TODO: change to while loop + add sanity check
+        friend_NAME = input('Hi Friend; what is your name? : ') # Request user input
         return friend_NAME
 
 #################################################################################
 # Ask friend what their name is
 def ask_usr_name(usr_NAME):
-    os.system('clear')
-    if usr_NAME == None:                                 # TODO: change to while loop + add sanity check
-        usr_NAME = input('First, what is your name? : ')
-        print('inside ask_usr_name', usr_NAME)           # BUB_1.0 - SOLVED
-        return usr_NAME                                  # BUG_1.1 - SOLVED
+    os.system('clear')                                      # Clear Terminal
+    if usr_NAME == None:                                    # TODO: change to while loop + add sanity check
+        usr_NAME = input('First, what is your name? : ')    # Request user input
+        return usr_NAME
 
 #################################################################################
+# Request user commands
+# Options include:
+# - hello world
+# - hello friend
 def req_command(usr_CMD, usr_NAME):
 
-    if usr_CMD == None:                                    # TODO: change to while loop + add sanity check
+    if usr_CMD == None:                                     # TODO: change to while loop + add sanity check
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
 
-        if usr_CMD == 'hello world':                       # TODO: change to while loop + add sanity check
+        if usr_CMD == 'hello world':                        # TODO: change to while loop + add sanity check
 
-            ask_usr_name(usr_NAME)                   # Get User Name
-            return usr_NAME                          # Return User Name's Value
-            print_hello_world(usr_NAME)              # Print Salutations + User Name
+            usr_NAME = ask_usr_name(usr_NAME)               # Get User Name
+            print_hello_world(usr_NAME)                     # Print Salutations + User Name
 
         elif usr_CMD == 'hello human':
 
-            ask_usr_name(usr_NAME)                   # Get User Name
-            return usr_NAME                          # Return User Name's Value
-            ask_friend_name()                        # Get Friend Name
-            return friend_NAME                       # Return User Name's Value
+            usr_NAME = ask_usr_name(usr_NAME)               # Get User Name
+            friend_NAME = None
+            friend_NAME = ask_friend_name(friend_NAME)      # Get Friend Name
 
-            print_hello_usr(usr_NAME, friend_NAME)   # Print Salutations + User Name
+            print_hello_usr(usr_NAME, friend_NAME)          # Print Salutations + User Name
 
         else:
             print('Sorry, that command was not understood, please try again...')
@@ -66,20 +69,20 @@ def req_command(usr_CMD, usr_NAME):
 # Leading function to define base variables etc.
 # Set Default Variables
 def main():
-    os.system('clear')
     greetings = '''Hello, from here you can do a few things including:
     Send a "hello world message"  [hello world]
     Send a "hello human message"  [hello human]
     '''
 
-    # Set Default value of usr_NAME
+    os.system('clear')                                      # Clear Terminal
+
+    # Set Default value of usr_NAME if NOT set at command line
     try:
         usr_NAME
     except NameError:
         usr_NAME = None
 
-    # Set Default value of usr_CMD
-    usr_CMD = None
+    usr_CMD = None                                          # Set Default value of usr_CMD
 
     print(greetings)
     req_command(usr_CMD, usr_NAME)
