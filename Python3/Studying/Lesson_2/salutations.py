@@ -17,40 +17,45 @@ def print_hello_usr(usr_NAME, friend_NAME):
 def print_hello_world(usr_NAME):
     os.system('clear')
     print('>>  HELLO WERLD!', end=' ')
-    print('My name is', usr_NAME, end='<<   ;)')       # BUG_1.2 - variable usr_NAME fails "not defined"
+    print('My name is', usr_NAME, end='  <<   ;)')
 
 #################################################################################
 # Ask friend what their name is
 def ask_friend_name(friend_NAME):
     os.system('clear')
-    friend_NAME = "None"
-    if friend_NAME == "None":                              # TODO: change to while loop + add sanity check
+    friend_NAME = None
+    if friend_NAME == None:                              # TODO: change to while loop + add sanity check
         friend_NAME = input('Hi Friend; what is your name? : ')
+        print('inside ask_friend_name', friend_NAME)
         return friend_NAME
 
 #################################################################################
 # Ask friend what their name is
 def ask_usr_name(usr_NAME):
     os.system('clear')
-    if usr_NAME == "None":                                 # TODO: change to while loop + add sanity check
+    if usr_NAME == None:                                 # TODO: change to while loop + add sanity check
         usr_NAME = input('First, what is your name? : ')
-        return usr_NAME                              # BUG_1.1 - attempting to return variable 'usr_NAME'
+        print('inside ask_usr_name', usr_NAME)           # BUB_1.0 - SOLVED
+        return usr_NAME                                  # BUG_1.1 - SOLVED
 
 #################################################################################
 def req_command(usr_CMD, usr_NAME):
 
-    if usr_CMD == "None":                                  # TODO: change to while loop + add sanity check
+    if usr_CMD == None:                                    # TODO: change to while loop + add sanity check
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
 
         if usr_CMD == 'hello world':                       # TODO: change to while loop + add sanity check
 
             ask_usr_name(usr_NAME)                   # Get User Name
+            return usr_NAME                          # Return User Name's Value
             print_hello_world(usr_NAME)              # Print Salutations + User Name
 
         elif usr_CMD == 'hello human':
 
             ask_usr_name(usr_NAME)                   # Get User Name
+            return usr_NAME                          # Return User Name's Value
             ask_friend_name()                        # Get Friend Name
+            return friend_NAME                       # Return User Name's Value
 
             print_hello_usr(usr_NAME, friend_NAME)   # Print Salutations + User Name
 
@@ -71,10 +76,10 @@ def main():
     try:
         usr_NAME
     except NameError:
-        usr_NAME = "None"
+        usr_NAME = None
 
     # Set Default value of usr_CMD
-    usr_CMD = "None"
+    usr_CMD = None
 
     print(greetings)
     req_command(usr_CMD, usr_NAME)
