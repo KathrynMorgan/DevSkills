@@ -13,7 +13,7 @@ import os
 # Define the "hello" function
 def print_hello_usr(usr_NAME, friend_NAME):                 # Notice variable names passed through function name brackets
     os.system('clear')
-    print('Hello {} How are you? '.format(friend_NAME))
+    print('Hello {}, How are you? '.format(friend_NAME))
     print('My name is {}'.format(usr_NAME))
 
 #################################################################################
@@ -27,7 +27,7 @@ def print_hello_world(usr_NAME):
 # Ask friend what their name is
 def ask_friend_name(friend_NAME):
     os.system('clear')                                      # Clear Terminal
-    if friend_NAME == None:                                 # TODO: change to while loop + add sanity check
+    if friend_NAME is None:                                 # TODO: change to while loop + add sanity check
         friend_NAME = input('Hi Friend; what is your name? : ') # Request user input
         return friend_NAME
 
@@ -35,7 +35,7 @@ def ask_friend_name(friend_NAME):
 # Ask friend what their name is
 def ask_usr_name(usr_NAME):
     os.system('clear')                                      # Clear Terminal
-    if usr_NAME == None:                                    # TODO: change to while loop + add sanity check
+    if usr_NAME is None:                                    # TODO: change to while loop + add sanity check
         usr_NAME = input('First, what is your name? : ')    # Request user input
         return usr_NAME
 
@@ -46,7 +46,7 @@ def ask_usr_name(usr_NAME):
 # - hello friend
 def req_command(usr_CMD, usr_NAME):
 
-    if usr_CMD == None:                                     # TODO: change to while loop + add sanity check
+    if usr_CMD is None:                                     # TODO: change to while loop + add sanity check
         usr_CMD = input('What would you like to do {0}? : '.format(usr_NAME))
 
         if usr_CMD == 'hello world':                        # TODO: change to while loop + add sanity check
