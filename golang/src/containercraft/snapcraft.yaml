@@ -1,0 +1,22 @@
+name: ccio # you probably want to 'snapcraft register <name>'
+version: '0.0.1' # just for humans, typically '1.2+git' or '1.3.2'
+summary: ContainerCraft.io Official Build Tools # 79 char long summary
+description: |
+    This suite provides virtual guest containerization and networking 
+    management utilities with the aim of consistent and repeatable dev & lab
+    development environments. Learn more at http://containercraft.io
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+parts:
+  ccio:
+    source: .
+    plugin: go
+    go-importpath: ccio
+
+apps: 
+  ccio:
+    command: bin/ccio
+  obb:
+    command: bin/obb

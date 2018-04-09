@@ -1,0 +1,12 @@
+name: hello
+version: '0.1'
+summary: interactive hello werld snap written in golang
+description: "This is a learning exercise in writing an interactive \"hello werld\"\
+  \ program \nin golang and packaging/publishing as a snap.\n"
+architectures:
+- amd64
+confinement: devmode
+grade: devel
+apps:
+  hello:
+    command: command-hello.wrapper

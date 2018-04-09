@@ -1,0 +1,29 @@
+
+# Investigational
+# bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# source /home/ubuntu/.gvm/scripts/gvm
+
+# Update && Upgrade && Add PPA's && Add Packages
+sudo apt update
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+sudo add-apt-repository -y ppa:gophers/archive
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl git make binutils bison gcc mercurial golang-golang-x-tools golang-1.10-doc python-pip ctags ranger tig luajit lua5.1
+sudo snap install snapcraft --classic
+sudo pip install --upgrade pip
+sudo pip install pylint virtualenvwrapper coverage
+curl -L https://raw.github.com/liangxianzhe/oh-my-vim/master/tools/install.sh | sh
+
+
+# Pull devskills repo
+mkdir Git
+git clone https://github.com/KathrynMorgan/DevSkills.git ~/Git
+ln -s ~/Git/DevSkills/golang/ ~/golang
+
+# Add GO Environment Variables
+echo 'export GOPATH="/home/ubuntu/Git/DevSkills/golang/"' >> ~/.bashrc
+echo 'export GOBIN="/home/ubuntu/Git/DevSkills/golang/bin"' >> ~/.bashrc
+source ~/.bashrc
+echo $GOROOT
+echo $GOPATH
+go version
