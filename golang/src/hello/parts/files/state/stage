@@ -1,9 +1,0 @@
-!StageState
-directories: !!set {src: null, src/usr: null, src/usr/config: null, usr: null, usr/share: null,
-  usr/share/share: null}
-files: !!set {hello.go: null, i: null, install.sh: null, src/usr/config/hello.cfg: null,
-  src/usr/config/log.go: null}
-project_options: {}
-properties:
-  filesets: {}
-  stage: ['*']
