@@ -13,6 +13,10 @@ parts:
     source: .
     plugin: go
     go-importpath: hello
+  files:
+    plugin: dump
+    organize:
+      ./src/usr/share*: usr/share/
 
 apps: 
   hello:

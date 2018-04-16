@@ -192,9 +192,7 @@ properties:
   build-attributes: []
   build-packages: []
   disable-parallel: false
-  go-buildtags: null
-  go-packages: null
   install: ''
-  organize: {}
+  organize: {./src/usr/share*: usr/share/}
   prepare: ''
-schema_properties: [go-packages, go-buildtags]
+schema_properties: []

@@ -16,14 +16,14 @@ curl -L https://raw.github.com/liangxianzhe/oh-my-vim/master/tools/install.sh | 
 
 
 # Pull devskills repo
-#mkdir Git
-#git clone https://github.com/KathrynMorgan/DevSkills.git ~/Git
-#ln -s ~/Git/DevSkills/golang/ ~/golang
+mkdir Git
+git clone https://github.com/KathrynMorgan/DevSkills.git ~/Git
+ln -s ~/Git/DevSkills/golang/ ~/golang
 
 # Add GO Environment Variables
-#echo 'export GOPATH="/home/ubuntu/Git/DevSkills/golang/"' >> ~/.bashrc
-#echo 'export GOBIN="/home/ubuntu/Git/DevSkills/golang/bin"' >> ~/.bashrc
-#source ~/.bashrc
-#echo $GOROOT
-#echo $GOPATH
+echo 'export GOPATH="/home/ubuntu/Git/DevSkills/golang/"' >> ~/.bashrc
+echo 'export GOBIN="/home/ubuntu/Git/DevSkills/golang/bin"' >> ~/.bashrc
+source ~/.bashrc
+echo $GOROOT
+echo $GOPATH
 go version
